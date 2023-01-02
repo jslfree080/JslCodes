@@ -6,4 +6,4 @@ Updating the codes that I create.
 A Python script that automates downloading supplementary files from GEO.
 
 ## VcfFormatParsedTxt.jar
-A simple Java program that parses the FORMAT column of vcf file, converting to txt file.
+A simple Java program that parses the FORMAT column of a vcf file, converting it to a txt file.
