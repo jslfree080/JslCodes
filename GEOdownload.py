@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Author: Jungsoo Lee <jungsoo080@korea.ac.kr>
+Author: Jungsoo Lee <jslfree080@gmail.com>
 """
 from abc import *
 from GEOparse import *
