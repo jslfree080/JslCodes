@@ -14,7 +14,7 @@ class WEBFILEdownloader(metaclass = ABCMeta):
     @abstractmethod
     def runDownload(self):
         pass
-    def setdestDir(self, destDirP):
+    def setDestDir(self, destDirP):
         self.destDir = destDirP
 
 class ProcessDir:
@@ -43,5 +43,5 @@ if __name__ == "__main__":
     gse = GEOdownloader("/Users/jungsoo080/Documents/Python3/")
     gse.runDownload("GSE185553")
     gse.runDownload("GSE185277")
-    gse.setdestDir("/Users/jungsoo080/Desktop/")
+    gse.setDestDir("/Users/jungsoo080/Desktop/")
     gse.runDownload("GSE198323")
