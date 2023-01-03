@@ -2,5 +2,6 @@
 
 from GEOdownload import *
 
-gse = GEOdownloader("/Users/jungsoo080/Desktop/")
-gse.runDownload("GSE87581")
+
+gse = GEOdownloader("/Users/jslit/Desktop/")
+gse.run_download("GSE87581")
