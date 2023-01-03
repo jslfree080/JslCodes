@@ -112,7 +112,7 @@ public class PayItems {
         Item item3 = new Item(Size.XL, 100);
         pi.addItem(item1);
         pi.addItem(item2);
-        pi.runPayMethod(new Paypal("jungsoo080@korea.ac.kr", "somePassword"));
+        pi.runPayMethod(new Paypal("jslfree080@gmail.com", "somePassword"));
         pi.removeItem(item1);
         pi.removeItem(item2);
         pi.addItem(item3);
