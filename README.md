@@ -1,7 +1,5 @@
 # JslCodes
 
-Updating the codes that I create.
-
 ## GEOdownload.py
 A Python script that automates downloading supplementary files from GEO.
 
