@@ -1,6 +1,8 @@
 #!/usr/bin/env python3
 """
-Author: Jungsoo Lee <jslfree080@gmail.com>
+Author: Jungsoo Lee
+Date: January 4, 2023
+Description: This script automates downloading supplementary files from GEO.
 """
 import os
 import wget
