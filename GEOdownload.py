@@ -11,7 +11,6 @@ from GEOparse import get_GEO
 
 
 class ProcessDir(ABC):
-
     @abstractmethod
     def process(self):
         pass
