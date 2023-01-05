@@ -26,7 +26,10 @@ class NewDir(ProcessDir):
         try:
             os.makedirs(self.get_dir, exist_ok=True)
         except OSError as e:
-            print(f"An error occurred while creating the directory: {e}")
+            print(f"An error occurred while creating the directory {self.get_dir}: {e}")
+
+    def __repr__(self):
+        return f'{self.__class__.__name__}({self.get_dir})'
 
 
 class DownloadWebfile(ABC):
@@ -39,6 +42,9 @@ class DownloadWebfile(ABC):
     def run_download(self, data_name):
         pass
 
+    def __repr__(self):
+        return f'{self.__class__.__name__}({self.destination_dir})'
+
 
 class DownloadGEO(DownloadWebfile):
     def run_download(self, data_name):
@@ -48,15 +54,22 @@ class DownloadGEO(DownloadWebfile):
         new_dir.process()
 
         # Retrieve metadata for the given GEO accession number
-        gse = get_GEO(geo=data_name, destdir=self.destination_dir)
+        try:
+            gse = get_GEO(geo=data_name, destdir=self.destination_dir)
+        except Exception as e:
+            print(f'An error occurred while retrieving metadata for {data_name}: {e}')
+            return
 
         # Download the supplementary files
-        for supp_files in gse.metadata['supplementary_file']:
-            try:
-                # Save the file to the new directory created above
-                wget.download(supp_files, out=new_dir.get_dir)
-            except Exception as e:
-                print(f'An error occurred while downloading the file: {e}')
+        if 'supplementary_file' in gse.metadata:
+            for supp_files in gse.metadata['supplementary_file']:
+                try:
+                    # Save the file to the new directory created above
+                    wget.download(supp_files, out=new_dir.get_dir)
+                except (IOError, ValueError, OSError) as e:
+                    print(f'An error occurred while downloading the file from {supp_files} to {new_dir.get_dir}: {e}')
+        else:
+            print(f'There are no supplementary files listed in the metadata for {data_name}')
 
 
 if __name__ == "__main__":
