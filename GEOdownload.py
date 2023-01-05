@@ -1,4 +1,3 @@
-#!/usr/bin/env python3
 """
 Author: Jungsoo Lee
 Date: January 5, 2023,
