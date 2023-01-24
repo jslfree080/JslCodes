@@ -1,10 +1,13 @@
 # Toy codes that I upload
 
 ## GEOdownload.py
-A Python script that automates downloading supplementary files from GEO.
+A simple Python script that automates downloading supplementary files from GEO.
 
 ## VcfFormatParsedTxt.jar
 A simple Java program that parses the FORMAT column of a vcf file, converting it to a txt file.
+
+## screenshow.sh
+A very simple shell script to capture image.
 
 ## now.sh
 A shell script that displays weather report and calendar on terminal. Modified a little bit from the reference.
